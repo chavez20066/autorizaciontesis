@@ -1,0 +1,27 @@
+<%@ page pageEncoding="UTF-8" %>
+<header>
+    <nav class="top-nav light-blue lighten-2">
+        <div class="container">
+            <!--
+            <div class="col s12 m2">
+                <img class="" src="<%= request.getContextPath()%>/img/UCSM.png" style=" width: 150px;"  >
+            </div>-->
+            <!-- <div class="col s12 m8 ">-->
+            <div class="row nav-wrapper2 card-panel  light-blue lighten-1" style="margin: 0">
+                <div class="col s12 m2 center-align">
+                    <img  src="<%= request.getContextPath()%>/img/escudo_retina.png" style=" width: 100px;">
+                </div>
+                <div class="col s12 m8 center-align">
+                    <a class="page-title " style=" font-size: 35px;text-align: center !important; ">UNIVERSIDAD CATÓLICA DE SANTA MARÍA</a>
+                </div>
+                <div class="col s12 m2 center-align">
+
+                    <img  src="<%= request.getContextPath()%>/img/logo_biblioteca.png" style=" width: 100px;">
+                </div>
+
+                <!-- </div>-->
+            </div>
+        </div>
+
+    </nav>
+</header>

@@ -1,0 +1,26 @@
+.mayusculas{
+	text-transform: uppercase;
+}
+.navicon_dspace {
+    text-shadow: rgb(146, 146, 11) 0px 0px 0px, rgb(155, 155, 11) 1px 1px 0px, rgb(164, 164, 12) 2px 2px 0px, rgb(173, 173, 12) 3px 3px 0px, rgb(182, 182, 13) 4px 4px 0px, rgb(191, 191, 14) 5px 5px 0px, rgb(200, 200, 14) 6px 6px 0px;
+    font-size: 27px;
+    color: rgb(255, 255, 255);
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(209, 209, 15);
+}
+
+.navicon_facebook {
+    text-shadow: rgb(41, 62, 106) 0px 0px 0px, rgb(44, 67, 114) 1px 1px 0px, rgb(47, 71, 122) 2px 2px 0px, rgb(50, 76, 129) 3px 3px 0px, rgb(53, 80, 137) 4px 4px 0px, rgb(56, 85, 144) 5px 5px 0px;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    height: 42px;
+    width: 42px;
+    line-height: 42px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(59, 89, 152);
+}

@@ -1,0 +1,827 @@
+/***********************/
+@font-face 
+{ 
+  font-family: "Proxima Nova"; 
+  font-style: normal; 
+  font-weight: 300; 
+  src: url("https://s.yimg.com/uy/build/fonts/ProximaNova-Light-webfont-v2.eot#iefix") 
+       format("embedded-opentype"), 
+       url("https://s.yimg.com/uy/build/fonts/ProximaNova-Light-webfont-v2.woff") 
+       format("woff"), 
+       url("https://s.yimg.com/uy/build/fonts/ProximaNova-Light-webfont-v2.ttf") 
+       format("truetype"), 
+       url("https://s.yimg.com/uy/build/fonts/ProximaNova-Light-webfont-v2.svg#svgFontName") 
+       format("svg"); 
+}  
+/***********************/
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+/***************** PARALAX **************/  
+.parallax-container {  
+  min-height: 480px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+/**********************************************/
+  main {
+    flex: 1 0 auto;
+  }
+
+.carousel{
+	/*height: 650px !important;*/
+}
+
+
+.img_center{
+
+	margin:0 auto;
+}
+
+.textTesis{
+
+  text-align:justify !important;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+
+}
+
+
+/****************** nav icon ***********************/
+.navicon{
+
+  text-shadow: rgb(167, 58, 56) 0px 0px 0px, 
+               rgb(179, 62, 60) 1px 1px 0px, 
+               rgb(191, 66, 64) 2px 2px 0px, 
+               rgb(203, 71, 68) 3px 3px 0px, 
+               rgb(215, 75, 72) 4px 4px 0px, 
+               rgb(227, 79, 76) 5px 5px 0px; 
+  font-size: 21px; 
+  color: rgb(255, 255, 255); 
+  height: 42px !important; 
+  width: 42px; 
+  line-height: 42px !important; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(239, 83, 80);
+}
+
+.navicon2{  
+  font-size: 21px; 
+  color: white; 
+  height: 42px !important; 
+  width: 42px; 
+  line-height: 42px !important; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgba(255, 255, 255, 0.19);
+}
+
+.navicon_facebook{
+
+  text-shadow:  rgb(41, 62, 106) 0px 0px 0px, 
+                rgb(44, 67, 114) 1px 1px 0px, 
+                rgb(47, 71, 122) 2px 2px 0px, 
+                rgb(50, 76, 129) 3px 3px 0px, 
+                rgb(53, 80, 137) 4px 4px 0px, 
+                rgb(56, 85, 144) 5px 5px 0px; 
+
+  font-size: 21px; 
+  color: rgb(255, 255, 255); 
+  height: 42px; 
+  width: 42px; 
+  line-height: 42px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(59, 89, 152); 
+}
+
+.navicon_dspace
+{
+  text-shadow: rgb(146, 146, 11) 0px 0px 0px, 
+               rgb(155, 155, 11) 1px 1px 0px, 
+               rgb(164, 164, 12) 2px 2px 0px, 
+               rgb(173, 173, 12) 3px 3px 0px, 
+               rgb(182, 182, 13) 4px 4px 0px, 
+               rgb(191, 191, 14) 5px 5px 0px, 
+               rgb(200, 200, 14) 6px 6px 0px; 
+  font-size: 27px; 
+  color: rgb(255, 255, 255); 
+  height: 42px; 
+  width: 42px; 
+  line-height: 42px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(209, 209, 15);  
+}
+
+.navicon_horario{
+  text-shadow: rgb(170, 83, 15) 0px 0px 0px, 
+                rgb(177, 86, 16) 1px 1px 0px, 
+                rgb(183, 89, 17) 2px 2px 0px, 
+                rgb(190, 92, 17) 3px 3px 0px, 
+                rgb(197, 95, 18) 4px 4px 0px, 
+                rgb(203, 99, 18) 5px 5px 0px, 
+                rgb(210, 102, 19) 6px 6px 0px, 
+                rgb(216, 105, 20) 7px 7px 0px, 
+                rgb(223, 108, 20) 8px 8px 0px, 
+                rgb(230, 112, 21) 9px 9px 0px, 
+                rgb(236, 115, 21) 10px 10px 0px; 
+
+  font-size: 21px;
+  color: rgb(255, 255, 255); 
+  height: 42px; 
+  width: 42px; 
+  line-height: 42px; 
+  border-radius: 45%; 
+  text-align: center; 
+  background-color: rgb(243, 118, 22);
+}
+.navicon_home{
+
+  text-shadow: rgb(179, 179, 179) 0px 0px 0px, 
+  rgb(194, 194, 194) 1px 1px 0px, 
+  rgb(209, 209, 209) 2px 2px 0px, 
+  rgb(224, 224, 224) 3px 3px 0px, 
+  rgb(240, 240, 240) 4px 4px 0px; 
+
+  font-size: 21px; 
+  color: rgb(66, 66, 66); 
+  height: 34px !important; 
+  width: 34px; 
+  line-height: 34px !important; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(255, 255, 255);  
+}
+
+.navicon_profile{
+  text-shadow: rgb(48, 117, 165) 0px 0px 0px, 
+               rgb(50, 123, 173) 1px 1px 0px, 
+               rgb(53, 129, 182) 2px 2px 0px, 
+               rgb(55, 136, 191) 3px 3px 0px, 
+               rgb(58, 142, 200) 4px 4px 0px, 
+               rgb(60, 148, 209) 5px 5px 0px, 
+               rgb(63, 154, 217) 6px 6px 0px, 
+               rgb(65, 161, 226) 7px 7px 0px; 
+  font-size: 21px; 
+  color: rgb(255, 255, 255); 
+  height: 34px !important; 
+  width: 42px; 
+  line-height: 34px !important; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(68, 167, 235);  
+
+}
+
+.active_navicon{
+
+  /*background-color: #f44336;*/
+  background-color: rgba(119, 119, 119, 0.51);
+}
+
+/*******************************************************************/
+
+.servicios i {
+    margin: 40px 0;
+    color: #ee6e73;
+    font-size: 7rem;
+    display: block;
+}
+
+.servicios-caption {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/*********************** portada **************************/
+.p_links_portada{
+
+  font-family: 'Oswald', sans-serif;
+  padding: 10px;
+
+}
+/******************** end portada *********************/
+
+/****************** headings ***************************/
+.headers_biblioteca{
+  font-family: 'Bree Serif', serif;
+}
+
+.navbar_header li >a{
+  font-family: 'Bree Serif', serif;
+}
+
+
+/******************* indicators **********************/
+.indicator-item{
+  /*border: 5px solid #424242 !important;*/
+}
+
+
+
+/*******************************************************
+
+
+/************** CAROUSEL ARROWS ***********************/
+.carousel_arrows{
+/*  
+  text-shadow: rgb(46, 46, 46) 0px 0px 0px, 
+               rgb(51, 51, 51) 1px 1px 0px, 
+               rgb(56, 56, 56) 2px 2px 0px, 
+               rgb(61, 61, 61) 3px 3px 0px; 
+  font-size: 20px; 
+  color: rgb(255, 255, 255); 
+  height: 30px; 
+  width: 30px; 
+  line-height: 30px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(66, 66, 66);
+  */
+}
+/******************************************************/
+
+.dropdown-content li >a{
+
+  color: #424242 !important;
+
+}
+
+/*********** form validating **************/
+  /* label color */
+   .input-field label {
+     color: #000;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
+
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }   
+
+   /* invalid color */
+   #selectInvalid {
+
+    color: red;
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 #000;
+   }
+
+/*********** end form validating **************/
+
+
+.container_order {
+  
+  /* Setup Flexbox */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  /* Reverse Column Order */
+  -webkit-flex-flow: column-reverse;
+  flex-flow: column-reverse;
+
+}
+
+/********************** NOSOTROS ***********************/
+.chevron_nosotros{
+  color: #abc83d;
+}
+
+.ul_nosotros li{
+  padding: 5px;
+}
+
+.icon_check_nosotros{
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: #fff !important;
+    background-color: #999 !important;
+    text-align: center !important;  
+
+    width:22px !important;
+    height:22px !important;
+    background-color: #8bc34a !important;
+}
+.title_collapsible_header{
+  background-color:  #f3f3f3 !important;
+}
+
+/********************** CD TESIS ***********************/
+.icon_rule{
+  text-shadow: 
+    rgb(179, 179, 179) 0px 0px 0px, 
+    rgb(198, 198, 198) 1px 1px 0px, 
+    rgb(217, 217, 217) 2px 2px 0px, 
+    rgb(236, 236, 236) 3px 3px 0px; 
+  font-size: 59px; 
+  /*color: rgb(51, 181, 229); */
+  height: 110px; 
+  width: 80px; 
+  line-height: 80px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(255, 255, 255);
+}
+
+/*********************** SALA LECTURA *********************/
+.clock_sala{
+  text-shadow: 
+    rgb(166, 160, 163) 0px 0px 0px, 
+    rgb(178, 171, 175) 1px 1px 0px, 
+    rgb(190, 182, 186) 2px 2px 0px, 
+    rgb(201, 194, 198) 3px 3px 0px, 
+    rgb(213, 205, 210) 4px 4px 0px, 
+    rgb(225, 217, 221) 5px 5px 0px; 
+  font-size: 73px; 
+  color: rgb(76, 149, 191); 
+  height: 87px; 
+  width: 87px; 
+  line-height: 87px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(237, 228, 233);
+}
+
+/******************** CONSTANCIA *************************/
+.icono_constancia{
+  text-shadow: 
+    rgb(38, 124, 150) 0px 0px 0px, 
+    rgb(39, 129, 156) 1px 1px 0px, 
+    rgb(41, 135, 163) 2px 2px 0px, 
+    rgb(43, 140, 169) 3px 3px 0px, 
+    rgb(44, 145, 175) 4px 4px 0px, 
+    rgb(46, 150, 182) 5px 5px 0px, 
+    rgb(48, 156, 188) 6px 6px 0px, 
+    rgb(49, 161, 195) 7px 7px 0px, 
+    rgb(51, 166, 201) 8px 8px 0px, 
+    rgb(52, 172, 208) 9px 9px 0px; 
+  font-size: 41px; 
+  /*color: rgb(255, 255, 255); */
+  height: 79px; 
+  width: 79px; 
+  line-height: 79px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(54, 177, 214);
+}
+
+.icono_constancia2{
+  text-shadow: 
+    rgb(56, 57, 59) 0px 0px 0px, 
+    rgb(59, 60, 62) 1px 1px 0px, 
+    rgb(63, 64, 66) 2px 2px 0px, 
+    rgb(66, 67, 70) 3px 3px 0px, 
+    rgb(70, 71, 73) 4px 4px 0px, 
+    rgb(73, 74, 77) 5px 5px 0px, 
+    rgb(77, 78, 80) 6px 6px 0px; 
+  font-size: 41px; 
+  color: rgb(255, 255, 255); 
+  height: 79px; 
+  width: 79px; 
+  line-height: 79px; 
+  border-radius: 50%; 
+  text-align: center; 
+  background-color: rgb(80, 81, 84);
+}
+
+/**************** UTLIMAS ADQUISICIONES *******************/
+.active_navicon_ad{
+
+  background-color: #f44336;
+
+}
+
+/*************** TABLA TESIS ******************************/
+.td_active
+{
+  background-color: rgba(226, 220, 220, 0.31);
+}
+
+.toast
+{
+  background-color: #4db6ac  !important;  
+}
+
+/***************** PRELOADING PAGE   *************************/
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../images/preloader.gif) center no-repeat #fff;
+}
+/****************** END PRELOADING PAGE ***********************/
+
+.elePre
+{
+  display:none;
+}
+
+/***************** CAROUSEL **********************************/
+.slick-prev:before, .slick-next:before 
+{
+  /*
+  color: #212121;*/
+}
+/***************** END CAROUSEL ******************************/
+.btn-floating.halfway-fab {
+  /*
+    position: absolute;
+    right: 24px;
+    bottom: 0;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);
+    */
+}
+
+/********** MAIN NAVS *****************/
+.navMain1{
+
+background-color: #00A8E8;
+
+}
+.navMain2{
+
+background-color: #007EA7;
+
+}
+.divSection
+{
+  background-color: #003459;
+}
+
+.logoFloat{
+    position: absolute;
+    /*left: 4%;*/
+    bottom: 0;
+    -webkit-transform: translateY(50%);
+    transform: translateY(50%);  
+}
+.universityFont{
+  font-family: 'Oswald', sans-serif;  
+}
+
+/******* IMG BASE DATOS ELECTRONICAS ******/
+.divImgBDE{
+  height:300px;
+}
+
+.imgBDE
+{
+    height: 300px;
+    background-size: cover;
+    width: 450px;  
+    display: block;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.title_bd
+{
+  color: #007ea7 !important;
+  font-weight: 500;
+
+}
+
+
+/******* REVISTAS **********/
+#selectEspecialidades
+{
+  border-bottom: 1px solid #eceff1 !important;
+}
+div.formSelRevistas > div > span
+{
+  color:white !important;
+}
+
+div.formSelRevistas > div > input
+{
+  border-bottom: 1px solid #003459 !important;
+}
+
+div.formSelRevistas > div > ul > li >span
+{
+  color:#007ea7 !important;
+}
+
+.cardRevistas{
+  
+ background: -webkit-linear-gradient(rgba(255, 253, 253, 0.92), rgb(255, 255, 255)) !important;
+ background: -o-linear-gradient(rgba(255, 253, 253, 0.92), rgb(255, 255, 255)) !important;
+ background: linear-gradient(rgba(255, 253, 253, 0.92), rgb(255, 255, 255)) !important;
+
+}
+
+/*****************************/
+.navMain2 div a.button-collapse
+{
+  float: right !important;
+}
+
+/************* DIRECTORIO TELEFONICO *****************/
+
+.row_directorio
+{
+    background-color: #dadada;
+    padding: 10px 10px 10px 10px;
+    border-bottom: 2px solid #007ea7;  
+}
+
+.main_font, .title_directorio
+{
+  font-family: 'Oswald', sans-serif;
+  padding-left: 10px !important;
+}
+
+
+.title_directorio
+{
+  font-weight: bolder !important;
+  font-size: 1.2em;
+}
+
+.divider
+{
+    background-color: #d0cdcd !important;
+}
+
+
+/**************** CSS PARA ERRORES *****************/
+
+form ul:not(.browser-default) li
+{
+    color: red;
+}
+
+.newsuccess
+{
+  color: #26a69a !important;
+}
+
+.newerror
+{
+  margin-top: -37px !important;
+}
+
+.newerror_color
+{
+  color: #fe3636 !important;
+}
+
+.newerror_span
+{
+  float: right !important;
+  color: red !important;
+}
+
+.newerror_ve
+{
+    margin-top: -19px;
+    font-size: 13px;
+    color: #e06363;
+    text-align: left;
+    margin-bottom: 19px;
+
+}
+.newsuccess_ve
+{
+    margin-top: -19px;
+    font-size: 13px;
+    color: #26a69a;
+    text-align: left;
+    margin-bottom: 19px;
+  
+}
+
+
+
+.field_error
+{
+  margin-top: -52px !important;;
+  font-size: 0.9rem !important;;
+  margin-bottom: -15px !important;
+  padding-bottom: 0px !important;
+  text-align: right !important;;
+  display: block !important;;
+}
+
+.field_error li
+{
+  opacity:1 !important;
+  position: relative !important;
+  margin-top: 34px !important;
+  font-size: 0.9rem !important;;
+  margin-bottom: -15px !important;
+  padding-bottom: 0px !important;
+  text-align: right !important;;
+  display: block !important;
+}
+
+.field_error_select
+{
+  margin-top: -21px;
+  font-size: 0.9rem;
+  margin-bottom: -15px !important;
+  padding-bottom: 0px !important;
+  text-align: right;
+  display: block;
+}
+
+.line_field_error
+{
+  border-bottom: 1px solid #fe3636 !important;
+}
+
+.line_field_success
+{
+  border-bottom: 1px solid #26a69a !important;
+}
+
+.character-counter
+{
+  color: green !important;
+  margin-top: -50px !important;
+}
+
+
+.toast.check_error
+{
+  background-color: #ec655b !important;
+  color: white !important;
+  font-weight: bolder !important;
+}
+
+
+/*********** INDICATOR TABS ***/
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;      
+  color: #007ea7 !important;
+  font-family: 'Oswald', sans-serif;    
+}
+.indicator
+{
+  background-color:#007ea7 !important;
+}
+/************ END *******************/
+
+.fontOswald
+{
+  font-family: 'Oswald', sans-serif !important;   
+}
+
+/********* CHIPS COLOR *************/
+.c_ingenierias
+{
+  background-color: #009688;
+  color: white;
+}
+.c_biomedicas
+{
+  background-color: #b1dcfb;
+  color: #352612;  
+}
+.c_sociales
+{
+  background-color: #f18e00;
+  color: white;  
+}
+
+/*********** BUTTON UCSM ***********/
+#botonucsm:hover {
+    background-color: none !important;
+}
+
+/************* SHOW MORE *********************/
+/*
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font: 100%/1.5 Helvetica Neue;
+  -webkit-font-smoothing: antialiased;
+  background-color: darken(#70b0e1, 50%);
+  color: #fff;
+}
+*/
+.shine {
+  position: absolute;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  margin-left: -100px;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0,0,0,.1);
+  -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+  -webkit-mask-size: 200%;
+  animation: shine 4s infinite, hover 2s alternate infinite ease-in-out;
+  
+  &:after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    left: 50%;
+    margin-left: -5px;
+    transform: translateY(30%) rotate(45deg);
+    animation: hoverSmall 2s 1s alternate infinite ease-in-out;
+  }
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+  
+  to {
+    -webkit-mask-position: -50%;
+  }
+}
+
+@-webkit-keyframes hover {
+  from {
+    transform: translateY(-50%);
+  }
+  
+  to {
+    transform: translateY(-75%);
+  }
+}
+
+@-webkit-keyframes hoverSmall {
+  from {
+    transform: translateY(30%) rotate(45deg);
+  }
+  to {
+    transform: translateY(-10%) rotate(45deg);
+  }
+}
+
+/********* PATTERN BACKGROUND ************/
+.imgpattern
+{
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23f4f4f4' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+
+/*********** MOBILE******************/
+.menumobile a{
+  color: #757575 !important;
+}
+/************************************/

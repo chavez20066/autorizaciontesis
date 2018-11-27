@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+	<meta charset="UTF-8" />
+	<meta name="context-path" th:content="@{/}"/>
+	<title>Biblioteca UCSM</title>
+	
+	<!-- Import FONTS-GOOGLE -->      
+	<link href="https://fonts.googleapis.com/css?family=Anton|Bree+Serif|Open+Sans+Condensed:300|Oswald|Ubuntu+Condensed|Yanone+Kaffeesatz" rel="stylesheet">         
+	
+	<!-- Import FONT-AWESOME -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->      	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
+	
+	<!-- Import Google Icon Font -->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
+	<!--Import materialize.css-->	
+	<link rel="stylesheet" th:href="@{/css/materialize.min.css}"  media="screen,projection" />
+	<link rel="stylesheet" th:href="@{/css/sweetalert.css}"  media="screen,projection" />
+	<link rel="stylesheet" th:href="@{/css/estilos.css}"  media="screen,projection" />
+	<link rel="stylesheet" th:href="@{/css/style.css}"  media="screen,projection" />
+	
+	<!--  Datatables css -->
+	<link rel="stylesheet" th:href="@{/css/jquery.dataTables.min.css}"  media="screen,projection" />
+	<link rel="stylesheet" th:href="@{/css/buttons.dataTables.min.css}"  media="screen,projection" />
+	
+	
+	<!--Let browser know website is optimized for mobile-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta http-equiv="Expires" content="0">
+	<meta http-equiv="Last-Modified" content="0">
+	<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+</head>
+<body>
+
+	<!--  <header th:fragment="header">
+				
+	</header>-->
+	
+	<header id="headerDiv" th:fragment="header" itemscope="" itemtype="http://schema.org/CollegeOrUniversity">
+         <!--Navbar-->
+           <nav class="top-nav hide-on-small-only transparent" style="-webkit-box-shadow: none !important;box-shadow: none !important;height: 71px !important;">
+        <div class="nav-wrapper container navbar_header" style="">
+          <ul class="left" style="height: 0px;">
+            <li class="show-on-medium">
+              <a id="botonucsm" href="http://www.ucsm.edu.pe/" itemprop="url">
+                <img itemprop="image" th:src="@{/imgs/logooficialucsm.png}" alt="" itemscope="" itemtype="http://schema.org/Person">
+              
+              </a>
+            </li>            
+          </ul>
+          <ul class="right hide-on-med-and-down ">            
+            <li>              
+              <a href="http://biblioteca.ucsm.edu.pe/sitio/nosotros" class="grey-text text-darken-1">
+                <i id="icon" class="fa fa-users navicon2 grey lighten-2"></i>
+                Nosotros
+              </a>
+            </li>
+            <li>
+              <a href="http://biblioteca.ucsm.edu.pe/contacto" class="grey-text text-darken-1">
+              <i id="icon" class="fa fa-envelope-o navicon2 grey lighten-2"></i>
+              Contáctenos
+              </a>
+            </li>
+            <li>
+              <a href="http://biblioteca.ucsm.edu.pe/sitio/ayuda" class="grey-text text-darken-1">
+              <i id="icon" class="fa fa-question navicon2 grey lighten-2"></i>
+              Ayuda
+              </a>
+            </li>       
+          </ul>
+        </div>
+      
+  </nav>
+  <nav class="menumobile transparent grey-text text-darken-1" role="navigation" style="font-family: 'Ubuntu Condensed', sans-serif;">
+    <div class="nav-wrapper container"> 
+      <ul class=" left hide-on-med-and-down ">
+        <li>
+          
+        </li>
+        <li>
+            <div class="fontOswald">
+              <a id="BIBLIOtitle" href="http://biblioteca.ucsm.edu.pe/" style="opacity: 1; font-size: 1.5em !important;" class="grey-text text-darken-1 animated fadeInRight">
+                Biblioteca Central
+              </a>
+            </div>              
+        </li>
+        
+      </ul>         
+      <a id="logo-container" href="http://biblioteca.ucsm.edu.pe/" class="brand-logo hide-on-med-and-up ">
+        Biblioteca UCSM
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <a class="waves-effect waves-light" href="http://biblioteca.ucsm.edu.pe/"><i id="icon" class="fa fa-home grey-text text-darken-1"></i></a>          
+        </li>        
+        <li>
+          <a class="waves-effect waves-light dropdown-button grey-text text-darken-1" data-beloworigin="true" data-hover="true" data-constrainwidth="false" data-activates="dropdownTesis">Tesis<i class="material-icons right">arrow_drop_down</i></a><ul id="dropdownTesis" class="dropdown-content">
+            <li>
+              <a href="http://biblioteca.ucsm.edu.pe/usuario/login">
+              Cybertesis (2008 - 2012)
+              </a>
+            </li>
+            <li>
+              <a href="http://tesis.ucsm.edu.pe/repositorio">
+                Repositorio Tesis (2013 - a actualidad)                
+              </a>
+            </li>    
+            <li class="divider"></li>        
+            <li><a href="http://cib.ucsm.edu.pe/autorizaciontesis/listartesis">Listar Tesis</a></li>            
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/consideracionTesis">Consideración de Tesis</a></li>
+            <li>
+              <a class="modal-trigger" style="font-weight:bolder" href="#modal_turnitin">
+                <span style="color:red">turn</span>it<span style="color:red">in</span>
+                <span style="color:white" class="badge blue-grey" data-badge-caption="info"></span>
+              </a>
+              
+            </li>            
+          </ul>
+
+          
+
+        </li>
+        <li><a class="waves-effect waves-light dropdown-button grey-text text-darken-1" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdownDocentes">Docentes<i class="material-icons right">arrow_drop_down</i></a><ul id="dropdownDocentes" class="dropdown-content" style="white-space: nowrap; position: absolute; top: 65px; left: 912.281px; display: none; opacity: 1;">
+            <li><a href="http://tesis.ucsm.edu.pe/bibliografia/#no-back-button">Registro Bibliografía</a></li>
+          </ul>
+                    
+        </li>        
+        <li><a class="waves-effect waves-light dropdown-button grey-text text-darken-1" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdownBibliotecas">Bibliotecas<i class="material-icons right">arrow_drop_down</i></a><ul id="dropdownBibliotecas" class="dropdown-content" style="white-space: nowrap; position: absolute; top: 65px; left: 1032.27px; display: none; opacity: 1;">
+
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/organigrama">Organigrama</a></li>
+
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/bibliotecaVirtual">Biblioteca Virtual</a></li>
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/bibliotecas">Bibliotecas</a></li>
+          </ul>
+                    
+        </li>                
+        <li><a class="waves-effect waves-light dropdown-button grey-text text-darken-1" data-beloworigin="true" data-hover="true" data-constrainwidth="false" href="#!" data-activates="dropdownServicios">Servicios<i class="material-icons right">arrow_drop_down</i></a><ul id="dropdownServicios" class="dropdown-content">
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/carneBiblioteca">Carné de Biblioteca</a></li>      
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/constanciaBiblioteca">Constancia Biblioteca</a></li>      
+            <li><a href="http://biblioteca.ucsm.edu.pe/sitio/estanteriaAbierta">Estantería Abierta</a></li>            
+            <li><a href="http://cib.ucsm.edu.pe/autorizaciontesis">Formulario Publicacion de Tesis</a></li>            
+            <li class="divider"></li>
+            <li><a href="http://biblioteca.ucsm.edu.pe//adquisiciones">Últimas Adquisiciones</a></li>
+            <li><a href="http://biblioteca.ucsm.edu.pe//listaRevistas">Revistas</a></li>
+          </ul>
+                    
+        </li>
+      </ul>
+
+
+
+      <!------------------------- START MENU SMARTPHONE ------------------>
+      
+      <ul id="nav-mobile" class="side-nav" style="transform: translateX(-100%);">
+        <li class="light-blue lighten-1"><a style="color:white !important" href="/"><i class="material-icons">home</i> Biblioteca UCSM</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header">Bases de Datos Electrónicas<i class="material-icons right">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="http://biblioteca.ucsm.edu.pe//sitio/bibliotecaVirtual">Biblioteca Digital</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a class="collapsible-header">Tesis<i class="material-icons right">arrow_drop_down</i></a>
+              <div class="collapsible-body">
+                <ul>                  
+                  <li>
+                    <a href="http://tesis.ucsm.edu.pe/repositorio">
+                      Repositorio de Tesis Online
+                    </a>
+                  </li>                                        
+                  <li><a href="http://biblioteca.ucsm.edu.pe//sitio/consideracionTesis">Presentación de Tesis</a></li>            
+                </ul>                
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header" href="http://200.106.60.40/F">Catálogo</a>
+            </li>
+          </ul>
+        </li>        
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header">Servicios<i class="material-icons right">arrow_drop_down</i></a>
+
+
+          <ul id="dropdownServicios" class="dropdown-content">
+            <li><a href="http://biblioteca.ucsm.edu.pe//sitio/carneBiblioteca">Carné de Biblioteca</a></li>      
+            <li><a href="http://biblioteca.ucsm.edu.pe//sitio/constanciaBiblioteca">Constancia Biblioteca</a></li>      
+            <li><a href="http://biblioteca.ucsm.edu.pe//sitio/estanteriaAbierta">Estantería Abierta</a></li>            
+            <li><a href="http://cib.ucsm.edu.pe/autorizaciontesis">Formulario Publicacion de Tesis</a></li>            
+            <li class="divider"></li>
+            <li><a href="http://biblioteca.ucsm.edu.pe//adquisiciones">Últimas Adquisiciones</a></li>
+            <li><a href="http://biblioteca.ucsm.edu.pe//listaRevistas">Revistas</a></li>
+          </ul> 
+
+
+
+
+              <div class="collapsible-body">
+                <ul>                  
+                  <li><a href="http://biblioteca.ucsm.edu.pe//sitio/carneBiblioteca">Carné de Biblioteca</a></li>                  
+                  <li><a href="http://biblioteca.ucsm.edu.pe//sitio/constanciaBiblioteca">Constancia Biblioteca</a></li>
+                  <li><a href="http://biblioteca.ucsm.edu.pe//sitio/estanteriaAbierta">Estantería Abierta</a></li>                                     
+                  <li><a href="http://biblioteca.ucsm.edu.pe//adquisiciones">Últimas Adquisiciones</a></li>
+                  <li><a href="http://biblioteca.ucsm.edu.pe//listaRevistas">Revistas</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>   
+      
+      <!------------------------- END MENU SMARTPHONE ------------------>
+      
+      <a href="" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+
+	    </div>
+	
+	  </nav>  
+	  
+	
+	
+	
+	
+	<!-- modal window -->
+	           <div id="modal_turnitin" class="modal" style="z-index: 1003;">
+	    <div class="modal-content">
+	      <div class="row valign-wrapper">
+	        <div class="col s3 valign">
+	          <img  th:src="@{/imgs/turnitin.png}">
+	          
+	        </div>        
+	        <div class="col s9">
+	          <ul>
+	            <li>
+	              El líder mundial en la prevención del plagio y en la generación de comentarios constructivos y pertinentes          
+	            </li>
+	            <li>
+	              Ayuda a motivar la participacion de sus estudiantes.          
+	            </li>
+	            <li>
+	              Mejora el proceso de escritura previniendo el plagio y proporcionando comentarios constructivos y pertinentes a los estudiantes.        
+	            </li>
+	          </ul>
+	        </div>
+	      </div>    
+	      
+	    </div>
+	    <div class="modal-footer">
+	      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn red">Cerrar</a>
+	      <a href="http://turnitin.com/es" class=" modal-action modal-close waves-effect waves-green btn">Visitar web</a>
+	    </div>
+	  </div>	
+	        
+      </header>
+		
+	<div class="container"></div>
+
+	<!--<footer th:fragment="footer" class="page-footer bottom-sheet center-align blue darken-2">-->	
+	
+	<footer th:fragment="footer" class="page-footer grey darken-4" style="margin-top: 0px;">	
+        <!--<div class="container">
+            <div class="row">
+                <h5 class="center-align white-text flow-text"><strong>CENTRO DE INFORMACIÓN Y BIBLIOTECAS</strong></h5>
+         	 </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Copyright
+            </div>
+        </div>-->
+	  <div class="container">
+	    <div class="row ">
+	      <div class="col l3  s12">
+	        <h5 class="white-text headers_biblioteca">Universidad</h5>
+	        <ul>
+	
+	          <li><a class="grey-text text-lighten-3" href="http://biblioteca.ucsm.edu.pe/portada">Inicio</a></li>
+	          <li><a class="grey-text text-lighten-3" href="http://www.ucsm.edu.pe/admision-pregrado/">Admisión</a></li>
+	          <li><a class="grey-text text-lighten-3" href="http://www.ucsm.edu.pe/carreras/">Pregrado</a></li>
+	          <li><a class="grey-text text-lighten-3" href="http://www.ucsm.edu.pe/e-postgrado/">Postgrado</a></li>
+	          <li><a class="grey-text text-lighten-3" href="http://www.ucsm.edu.pe/investigacion/">Investigación</a></li>
+	        </ul>
+	      </div>      
+	      <div class="col l3  s12">
+	        <h5 class="white-text headers_biblioteca">Contacto</h5>
+	        <ul>
+	
+	          <li><a class="grey-text text-lighten-3" href="http://www.ucsm.edu.pe">Campus Central</a></li>
+	          <li><a class="grey-text text-lighten-3" href="#">Urb. San José s/n Umacollo</a></li>
+	          <li><a class="grey-text text-lighten-3" href="#">Arequipa - Perú</a></li>
+	          <li>
+	            <a class="grey-text text-lighten-3" href="#">
+	              <i class="fa fa-map-marker" aria-hidden="true"></i> Mapa </a>
+	          </li>
+	          <li>
+	            <a class="grey-text text-lighten-3" href="#">
+	             <i class="fa fa-phone-square" aria-hidden="true"></i>  054-382038
+	            </a>
+	          </li>
+	        </ul>
+	      </div>
+	      <div class="col l3 s12 white-text">
+	        <h5 class="headers_biblioteca">Enlaces Rápidos</h5>
+	
+	        <div class="row">
+	          <div class="col s2 m2">
+	            <div class="navicon_dspace"><a href="https://tesis.ucsm.edu.pe" class="white-text">D</a></div>
+	          </div>
+	          <div class="col s10 m10">
+	            <p><a href="https://tesis.ucsm.edu.pe" class="white-text">Tesis Digitales</a></p>
+	          </div>                                        
+	        </div>
+	        <div class="row">
+	          <div class="col s2 m2">            
+	            <a class="grey-text text-lighten-4" href="#!">                      
+	              <i id="icon" class="fa fa-calendar navicon_facebook" ></i>
+	            </a> 
+	          </div>
+	          <div class="col s10 m10">
+	            <p><a href="http://biblioteca.ucsm.edu.pe/portada#tablaHorarios" class="white-text">Horarios</a></p>
+	          </div>                                        
+	        </div>        
+	      </div>
+	      
+	      <div class="col l3  s12">
+	        <h5 class="white-text headers_biblioteca">Biblioteca</h5> 
+	        <ul>
+	          <li>
+	            <a class="grey-text text-lighten-3" href="http://www.ucsm.edu.pe/normatividad/">Normas</a>
+	
+	          </li>
+	          <li><a class="grey-text text-lighten-3" href="#">Guías</a></li>
+	          <li><a class="grey-text text-lighten-3" href="#">Mapa del Sitio</a></li>
+	          
+	        </ul>
+	      </div>          
+	    </div>
+	  </div>
+	  <div class="footer-copyright">
+	    <div class="container">
+	      <span style="font-family: 'Ubuntu Condensed', sans-serif;">© 2018 Universidad Católica de Santa María - Todos los derechos reservados</span>
+	        <a class="grey-text text-lighten-4 right " href="https://www.facebook.com/BibliotecaUCSM/" style="font-family: 'Ubuntu Condensed', sans-serif;">                      
+	          <i id="icon" class="fa fa-facebook navicon_facebook "></i> Síguenos
+	        </a> 
+    	</div>
+	  </div>
+   
+        
+        
+        
+        <!-- 	https://code.jquery.com/jquery-3.3.1.js -->
+	  	<script th:src="@{/js/jquery-2.1.1.js}"></script>
+		<script th:src="@{/js/materialize.js}"></script>		
+		<script th:src="@{/js/sweetalert.min.js}"></script>
+		
+		<!-- DATA TABLE -->
+		<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+		<script th:src="@{/js/dataTables.buttons.min.js}"></script>
+		<script th:src="@{/js/buttons.flash.min.js}"></script>		
+		<script th:src="@{/js/jszip.min.js}"></script>		
+		<script th:src="@{/js/pdfmake.min.js}"></script>		
+		<script th:src="@{/js/vfs_fonts.js}"></script>		
+		<script th:src="@{/js/buttons.html5.min.js}"></script>		
+		<script th:src="@{/js/buttons.print.min.js}"></script>
+		
+			
+		<script th:src="@{/js/functions.js}"></script> 
+		
+		  
+	</footer>
+	<div th:fragment="scripts">
+		 <!-- 	https://code.jquery.com/jquery-3.3.1.js -->
+	  	<script th:src="@{/js/jquery-2.1.1.js}"></script>
+		<script th:src="@{/js/materialize.js}"></script>		
+		<script th:src="@{/js/sweetalert.min.js}"></script>
+		
+		<script th:src="@{/js/functions.js}"></script> 
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8" />
+<head th:replace="layout/layout :: head"></head>
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<body>
+
+	<!-- <head th:replace="layout/layout :: header"></head>-->
+	<div class="row container" style="padding-top: 2%;">
+		<div class="nav-wrapper2 card-panel  light-blue lighten-1">
+			<h4 class="center-align white-text text-darken-2 hide-on-small-only">Registro de
+				Publicación de Trabajos de Investigación y/o Tesis</h4>
+			<h5 class="center-align white-text text-darken-2 hide-on-med-and-up">Registro de
+				Publicación de Trabajos de Investigación y/o Tesis</h5>
+		</div>
+	</div>
+	
+	<div id="divAutorizacionTesis" class="col s12 m12 l12"
+		style="padding-left: 5%; padding-right: 5%; padding-top: 3%;padding-bottom: 3%;">
+		<form th:action="@{/autorizaciontesis/crear}" th:object="${autorizacion}" method="post">
+		
+		<div class="card horizontal">
+			<div class="card-stacked">
+				<div class="card-content">
+					<div class="row">											
+							<br>
+							<div class="row">
+								<div class="input-field col s12 m12 l4">
+									 <select id="TipoInvest" th:field="*{modalidad.cModCod}">
+										<option value="0" disabled selected>Seleccione una opción</option>
+										<option value="5">AUTOMÁTICO</option>
+										<option value="2">EXÁMEN PROFESIONAL</option>
+										<option value="8">EXPERIENCIA PROFESIONAL</option>
+										<option value="3">INFORME DE TRABAJO PROFESIONAL</option>
+										<option value="7">MONOGRAFÍA</option>
+										<option value="4">OTRAS</option>
+										<option value="6">PROCESO DE ACTUALIZACIÓN</option>
+										<option value="1">SUSTENTACIÓN DE TESIS</option>
+										<option value="11">TRABAJO ACADÉMICO</option>
+									</select> <label>Modalidad de Sustentación</label> 									
+									
+								</div>
+							</div>
+										
+							<div class="row ">
+								<div class="col s12 m6">
+									<h5>Autor(es):</h5>
+								</div>
+								<div class="col s12 m6 right-align">
+									<a id="btnAgregarAutor" class="waves-effect waves-light btn "><span>Agregar Autor</span></a>
+								
+								</div>									
+							</div>
+
+							<div class="row">
+								<div class="col s10 m12 l12">
+									<table id="tablaAutores" class="striped bordered responsive-table">
+										<thead>
+											<tr>
+												<th data-field="codigo">Código</th>
+												<th data-field="dni">Dni</th>
+												<th data-field="apellidos">Apellidos</th>
+												<th data-field="nombres">Nombres</th>												
+												<th data-field="editar">Ver/Editar</th>
+												<th data-field="eliminar">Eliminar</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr th:each="autor:${autorizacion.autores}">
+												<td th:text="${autor.CodAlumno}"></td>
+												<td th:text="${autor.Dni}"></td>
+												<td th:text="${autor.Apellidos}"></td>
+												<td th:text="${autor.Nombres}"></td>
+												<td style="display:none;" th:text="${autor.facultad.idFacultad}"></td>
+							         			<td style="display:none;" th:text="${autor.programa.idPrograma}"></td>
+							            		<td style="display:none;" th:text="${autor.Telefono}"></td>
+							            		<td style="display:none;" th:text="${autor.Celular}"></td>
+							            		<td style="display:none;" th:text="${autor.Correo}"></td>
+							            		<td style="display:none;" th:text="${autor.IdDepartamento}"></td>
+							            		<td style="display:none;" th:text="${autor.IdProvincia}"></td>
+							            		<td style="display:none;" th:text="${autor.IdDistrito}"></td>
+							            		<td style="display:none;" th:text="${autor.Domicilio}"></td>
+							            		<td style="display:none;" th:text="${autor.grado.IdPrograma}"></td>
+							            		<td><a class="editar btn-floating btn-large waves-effect waves-light yellow"  ><i class="material-icons">edit</i></a></td>
+            									<td><a class="borrar btn-floating btn-large waves-effect waves-light red"><i class="material-icons">delete</i></a></td>											
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<!-- <textarea id="tituloTesis" name="tituloTesis" th:value="${autorizacion.Titulo}" class="materialize-textarea"></textarea>
+									 -->
+									<textarea id="Titulo" th:field="*{Titulo}" class="materialize-textarea mayusculas"></textarea>
+									<label for="tituloTesis">Titulo de Tesis:</label>
+								</div>
+							</div>
+							<input type="text" th:field="*{Autorizac}" th:value="0" class="hide">
+								
+							<div id="Modales"></div>
+											
+							<div class="row">
+								<div class="input-field col s12 m2 l2">
+									<select id="SelectGradoDoc" >
+										<option value="0" disabled selected>Seleccione una opción</option>
+										<option value="1">LICENCIADO(A)</option>
+										<option value="2">INGENIERO(A)</option>
+										<option value="3">MAGISTER</option>
+										<option value="4">DOCTOR(A)</option>
+										<option value="5">OTRO</option>
+									</select> <label>Grado Académico</label>								
+								
+								</div>
+							  	<div class="input-field col s12 m4 l4">
+                                	<input type="text" id="asesor"  th:field="*{Asesor}" class="autocomplete mayusculas">
+                                    <label for="asesor">Seleccionar Asesor(Apellidos y Nombres):</label>
+                                 </div>                                   
+							</div>							 
+							<div class="row">
+								<div class="card-panel col s12 m12 l5">
+									<span class="red-text text-darken-2">Recuerde completar
+										correctamente todos sus datos con los acentos
+										correspondientes.</span>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="col s12 m8 l12 center-align">
+				<a  id="guardar"  class="center waves-effect waves-green btn">Guardar</a>
+				<a href="/autorizaciontesis/" class="center modal-action modal-close waves-effect waves-green btn red">Limpiar</a>
+			</div>
+		</div>
+		<input id="csrfToken" type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />					
+		</form>
+		<form id="formhref" th:hidden action="/autorizaciontesis/autorizaciontesis/ver" method="post" >
+		  <input  type="hidden"  id="codigoForm" name="codigoForm" value=""/>
+		  <input  type="hidden" id="emailForm" name="emailForm" value=""/>	
+		  <input  type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>				  	
+		</form>	
+	</div>	
+	
+	<div th:replace="plantilla-autor::autorDetalle"></div>
+	
+	<footer th:replace="layout/layout :: scripts"></footer>	 
+	 
+</body>
+</html>

@@ -1,0 +1,7 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="<%= request.getContextPath()%>/css/materialize.min.css"  media="screen,projection"/>
+<link rel="stylesheet" type="text/css" href="<%= request.getContextPath()%>/js/dist/sweetalert.css">

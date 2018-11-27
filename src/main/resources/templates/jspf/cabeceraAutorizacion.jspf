@@ -1,0 +1,14 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<header>
+    <div class="white">
+        <div class="row container">
+            <div class="col s12 m4">
+                <img  src="<%= request.getContextPath()%>/img/escudo_retina.png" style=" width: 300px;">
+            </div>
+            <div class="col s12 m4 offset-m4" style="text-align: right;">
+                <img src="/autorizaciontesis/img/CentroDeInformacion.png" style=" width: 300px;">
+            </div>
+        </div>
+    </div>
+</header>

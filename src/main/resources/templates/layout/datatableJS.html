@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+	<script type="text/javascript" th:fragment="javascript">
+	 	var BASE_CONTEXT_PATH=null;
+		$(document).ready(function() {
+			$('.modal').modal();
+		   BASE_CONTEXT_PATH = $('meta[name=context-path]').attr("content");
+		   BASE_CONTEXT_PATH = BASE_CONTEXT_PATH.substr(0, BASE_CONTEXT_PATH.length - 1);
+			var table;
+			listarTitulos();					
+			
+		});	
+		var listarTitulos = function () {
+		    $("#btnListar").on("click", function () { 
+		    	listar();		    	
+		    	
+		    });
+		   
+		}
+		var listar = function () {
+		    //$("#cuadro2").slideUp("slow");
+		    //$("#cuadro1").slideDown("slow");
+		   
+		    
+	    	var idFacultad=$('select[name=facultadListarTesis]').val();
+	    	var idEscuela=$('select[name=escuelaListarTesis]').val();
+	    	var anio=$('select[name=anio]').val();
+	    	var autor=$('#autor_text').val();
+	    	var titulo=$('#titulo_text').val();
+	    	var token = $('#csrfToken').val();
+	        
+	    	
+	    	if(idFacultad==null){
+	    		swal({
+	    			  type: 'error',
+	    			  title: 'Oops...',
+	    			  text: 'Seleccione una Facultad'	    			  
+	    			})
+    			return;
+	    	}
+		    table = $("#tbl_titulos").DataTable({	    	 	
+		        "destroy": true,
+		        "autoWidth": false,
+		        dom: 'Bfrtip',
+		        buttons: [
+		            'excel', 'pdf'
+		        ],
+		        select: true,
+		        "ajax": {
+		            "method": "POST",
+	            	"url": BASE_CONTEXT_PATH + "/listartesis",
+		            "data": {"idfacultad": idFacultad, "idescuela": idEscuela,"anio": anio,"autor": autor,"titulo":titulo, "_csrf":token}
+		        },
+		        "columns": [	        	 	
+		            {"data": "codigo"},
+		            {"data": "titulo"},
+		            {"data": "autor"},
+		            {"data": "anio"}
+		           
+		       ],
+		        "language": idioma_espanol
+		    });		    
+		    $('select').material_select();  
+		    $("#divResult").slideDown("slow");		   
+		    
+		}	
+	 
+	 	function getErrorMessage(jqXHR, exception) {
+	 	    var msg = '';
+	 	    if (jqXHR.status === 0) {
+	 	        msg = 'Not connect.\n Verify Network.';
+	 	    } else if (jqXHR.status == 404) {
+	 	        msg = 'Requested page not found. [404]';
+	 	    } else if (jqXHR.status == 500) {
+	 	        msg = 'Internal Server Error [500].';
+	 	    } else if (jqXHR.status == 302) {
+	 	        msg = 'found[302].';
+	 	    } else if (exception === 'parsererror') {
+	 	        msg = 'Requested JSON parse failed.';
+	 	    } else if (exception === 'timeout') {
+	 	        msg = 'Time out error.';
+	 	    } else if (exception === 'abort') {
+	 	        msg = 'Ajax request aborted.';
+	 	    } else {
+	 	        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+	 	    }   
+	 	    console.log(msg);
+	 	}
+
+		var idioma_espanol = {
+		    "sProcessing": "Procesando...",
+		    "sLengthMenu": "Mostrar _MENU_ registros",
+		    "sZeroRecords": "No se encontraron resultados",
+		    "sEmptyTable": "Ningún dato disponible en esta tabla",
+		    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+		    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+		    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+		    "sInfoPostFix": "",
+		    "sSearch": "Filtrar:",
+		    "sUrl": "",
+		    "sInfoThousands": ",",
+		    "sLoadingRecords": "Cargando...",
+		    "oPaginate": {
+		        "sFirst": "Primero",
+		        "sLast": "Último",
+		        "sNext": "Siguiente",
+		        "sPrevious": "Anterior"
+		    },
+		    "oAria": {
+		        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+		        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+		    }
+		}
+		
+	</script>
+</body>
+</html>

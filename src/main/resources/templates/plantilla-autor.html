@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8" />
+<body>
+<div id="divAutor" th:fragment="autorDetalle" style="display: none;" >
+	<div class=" row col s12 m12 l12"	style="padding-left: 5%; padding-right: 5%; ">
+		<div class="card horizontal">
+			<div class="card-stacked">
+				<div class="card-content">
+					<div class="row">			
+				<h4>Datos del Autor</h4>
+				<div class="row">
+					<div class="input-field col s10 m4">
+						<i class="material-icons prefix">account_circle</i> 
+						<input id="codigo" name="codigo" type="number" class="validate solo-numero" required> 
+						<label for="codigo">Código de matricula UCSM</label>
+					</div>
+					<div class="col s2 m2 center-align">
+						<a id="btnBuscarAlumno" class="waves-effect waves-light btn">Buscar</a>
+					</div>											
+				</div>
+				<div class="row">
+					<div class="col s12 m6 offset-m3">
+			            <div class="card-panel">
+		              		<div class="input-field">
+								<input id="dni" type="number" class="validate solo-numero">
+								<label for="dni">D.N.I.</label>
+							</div>
+			            </div>
+		          	</div>
+					
+				</div>
+				<div class="row ">
+	
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">account_circle</i> 
+						<input id="apellidos" type="text" class="validate mayusculas"> 
+						<label for="apellidos">Apellidos</label>
+					</div>
+					<div class="input-field col s12 m6">
+						<input id="nombres" type="text" class="validate mayusculas"> 
+						<label for="nombres">Nombres</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m4">
+						<i class="material-icons prefix">email</i> 
+							<input id="email" type="email" class="validate">
+							<label for="email"	data-error="incorrecto" data-success="correcto">Email</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<i class="material-icons prefix">call_end</i> 
+						<input id="telefono" type="number" class="validate solo-numero">
+						<label for="telefono">Teléfono</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<i class="material-icons prefix">phone</i> 
+						<input id="celular" type="number" class="validate solo-numero">
+						<label for="celular">celular</label>
+					</div>
+				</div>
+				<label>Ubigeo</label>
+				<div class="row">
+					<div class="input-field col s12 m4">
+						<select id="departamento">
+							<option value='0' disabled selected>Seleccione una opción</option>
+							<option th:each="DepartamentoModel: ${departamentos}"
+								th:value="${DepartamentoModel.idDepartamento}"
+								th:text="${DepartamentoModel.departamento}"></option>
+						</select> <label>Ciudad</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<select id="provincia">
+							<option value="0" disabled selected>Seleccione una opción</option>
+						</select> <label>Provincia</label>
+					</div>
+					<div class="input-field col s12 m4">
+						<select id="distrito">
+							<option value="0" disabled selected>Seleccione una opción</option>
+						</select> <label>Distrito</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12">
+						<input id="direccion" type="text" class="validate mayusculas">
+						<label for="direccion">Dirección</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12">												
+						<select id="facultad">
+							<option value='0' disabled selected>Seleccione una opción</option>
+							<option th:each="Facultad: ${facultades}"
+								th:value="${Facultad.idFacultad}"
+								th:text="${Facultad.Facultad}"></option>
+						</select> <label>Facultad</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12">
+						<select id="escuela">
+							<option value="0" disabled selected>Seleccione una opción</option>
+						</select> <label>Escuela Profesional</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 m12">
+						
+						<select id="titulo">
+							<option value='0' disabled selected>Seleccione una opción</option>
+							<option th:each="Grado: ${grados}"
+								th:value="${Grado.IdPrograma}"
+								th:text="${Grado.Grado}"></option>
+						</select> <label>Título que Opta:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="card-panel col s12 m12">
+						<span class="red-text text-darken-2">Recuerde completar correctamente todos sus datos</span>
+					</div>
+				</div>
+			</div>
+			
+			<a id="AgregarAutor" class="waves-effect waves-green btn">Agregar</a>
+			<a id="cancelarAutor" class="waves-effect waves-green btn red">Cancelar</a>
+			
+			</div>						
+		</div>
+		</div>					
+	</div>
+</div>
+</body>
+</html>

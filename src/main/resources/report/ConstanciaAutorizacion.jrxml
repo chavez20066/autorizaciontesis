@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.0.final using JasperReports Library version 6.5.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3db00dfa-97d9-4800-8e95-8b30c6a47a2e">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<parameter name="NroAuto" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\jbasurco\\Documents\\NetBeansProjects\\PROYECTOS TOMCAT 7\\autorizaciontesis\\web\\Reporte\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select AutorizCompl,Anyo,Titulo,FechaRegistro,Asesor,ms.cModDe2 from Autoriz_Cybertesis ac
+INNER JOIN Modalidades_Sustentacion ms
+on ac.TipoInvest=ms.cModCod
+where Autorizac=$P{NroAuto}]]>
+	</queryString>
+	<field name="AutorizCompl" class="java.lang.String"/>
+	<field name="Anyo" class="java.lang.String"/>
+	<field name="Titulo" class="java.lang.String"/>
+	<field name="FechaRegistro" class="java.sql.Date"/>
+	<field name="Asesor" class="java.lang.String"/>
+	<field name="cModDe2" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="217" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="125" width="80" height="20" uuid="13b5f4e5-1d54-4588-ab7c-104821b23e06"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº Autorización:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="147" width="71" height="20" uuid="fc810ed3-3995-4d0c-9946-40ec57b57c92"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Modalidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="166" width="71" height="20" uuid="0b53c4d3-c090-4202-ab96-d67b70935126"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Titulo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="125" width="40" height="20" uuid="75c8f5c4-1869-49d6-b989-97d6f2e12ed0"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="125" width="100" height="20" uuid="2b986116-cce9-4508-9395-76ba5c28e4c0"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{AutorizCompl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="171" width="451" height="42" uuid="b1c47fcf-06e3-4654-a279-f1c26d21c017"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Titulo}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="356" y="125" width="100" height="20" uuid="dd6cfeba-5579-4f57-a22c-5957a1047811"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{FechaRegistro}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="147" width="352" height="20" uuid="8a8cc6a3-0cb2-4ae0-9acf-0b23ae82f356"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cModDe2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="86" width="555" height="37" uuid="7a9a443e-27de-426a-b4f5-0afaea03421e"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mediante el presente documento autorizó al Centro de Información y Bibliotecas de la Universidad Católica de Santa María, para que publique la versión electrónica de mi trabajo de investigación y/o tesis por internet o cualquier medio de transmisión, sin fines de lucro.]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="7" width="80" height="73" uuid="14b32a78-be95-4e34-a484-b57105fd434c"/>
+				<imageExpression><![CDATA[$P{SUBREPORT_DIR} + "logo_ucsm.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="135" y="10" width="266" height="23" uuid="440c7ea3-825d-4830-aba9-67029292cb2c"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[UNIVERSIDAD CATÓLICA DE SANTA MARÍA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="61" width="354" height="20" uuid="f4510d49-58ed-4629-9b2e-944f600a0a8c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORIZACIÓN PARA PUBLICACIÓN DE TRABAJO DE INVESTIGACIÓN Y/O TESIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="34" width="266" height="19" uuid="32f57990-0b2a-4126-b6ce-8fafccf5b9d7"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE INFORMACIÓN Y BIBLIOTECAS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="446" y="7" width="84" height="73" uuid="1b046a45-0f05-4636-9c23-77e28d0021fc"/>
+				<imageExpression><![CDATA[$P{SUBREPORT_DIR} + "logo_biblioteca.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="234" y="0" width="71" height="20" uuid="7ac82789-3013-48b6-9e72-f7c68f90de09"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTOR(ES)]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="79" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="3" width="555" height="76" uuid="37bfc1db-5bed-458f-b36a-675cef316fc8"/>
+				<subreportParameter name="CodAuto">
+					<subreportParameterExpression><![CDATA[$P{NroAuto}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Autores.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="19" y="12" width="71" height="20" uuid="d99f57b5-90df-459d-baba-1341e6dd6c4c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Asesor:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="12" width="201" height="20" uuid="90454b21-5b8b-4135-b935-5b3de247ce27"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Asesor}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="17" width="40" height="20" uuid="4a70ef1c-008b-4053-88fa-8b5975cb2bc2"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="17" width="69" height="20" uuid="66de8035-ca08-4bb2-97ce-fa9083a2abc3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="373" y="0" width="60" height="56" uuid="38b1ca00-2db1-4fd1-b053-fde0a05b2434"/>
+				<imageExpression><![CDATA[$P{SUBREPORT_DIR} + "sello.png"]]></imageExpression>
+			</image>
+		</band>
+	</columnFooter>
+</jasperReport>
